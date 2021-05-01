@@ -29,25 +29,16 @@ function Navbar() {
                         </li>
                         <li className='nav-item'>
                             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                                Home
-                            </Link>
-                        </li>
-                        <li className='nav-item'>
-                            <Link to='/products' className='nav-links' onClick={closeMobileMenu}>
-                                products
-                            </Link>
-                        </li>
-                        <li className='nav-item'>
-                            <Link to='/services' className='nav-links' onClick={closeMobileMenu}>
-                                services
-                            </Link>
-                        </li>
-                        <li className='nav-item'>
-                            <Link to='/signup' className='nav-links-mobile' onClick={closeMobileMenu}>
-                                sign up
+                                <i class="far fa-user"></i>Minha conta
                             </Link>
                         </li>
                     </ul>
+                    <Link to='/products' className='nav-links cart' onClick={closeMobileMenu}>
+                        <div id="cart-item">
+                            <img src='/images/shopping-cart.svg' />
+                            <span className='cart-itens'>1</span>
+                        </div>
+                    </Link>
                 </div>
             </nav>
         </>
