@@ -1,26 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Slideshow.css';
 // EXEMPLE RESPONSE -  REQUEST
 
 const dataSlide = [
     {
-        "html": "Testo um",
+        "title": "Olá, o que você está buscando?",
+        "description": " Criar ou migrar seu e-commerce?",
         "dataImg": "/images/banner-1.jpg"
 
     },
     {
-        "html": "Testo dois",
+        "title": "Slide 2, o que você está buscando?",
+        "description": " Criar ou migrar seu  e-commerce?",
         "dataImg": "/images/banner-1.jpg"
 
 
     },
     {
-        "html": "Testo tres",
+        "title": "Slide 3, o que você está buscando?",
+        "description": " Criar ou migrar seu e-commerce?",
         "dataImg": "/images/banner-1.jpg"
     }
 ];
 // EXEMPLE
-const delay = 5000;
+const delay = 100000;
 
 function Slideshow() {
     const [index, setIndex] = React.useState(0);
@@ -60,11 +63,13 @@ function Slideshow() {
                         key={index}
                         style={{ backgroundImage: `url(${e.dataImg})` }}
                     >
-                        {e.html}
+                        <div className="slideInfo">
+                            <h3>{e.title}</h3>
+                            <p>{e.description}</p>
+                        </div>
                     </div>
 
                 ))}
-                {console.log(dataSlide)}
 
             </div>
 

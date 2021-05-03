@@ -24,12 +24,12 @@ function Navbar() {
 
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item-search'>
-                            <span class="fa fa-search icon-search"></span>
+                            <span className="fa fa-search icon-search"></span>
                             <input type="text" className="form-control" placeholder="O que está procurando?" />
                         </li>
                         <li className='nav-item'>
                             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                                <i class="far fa-user"></i>Minha conta
+                                <i className="far fa-user"></i>Minha conta
                             </Link>
                         </li>
                     </ul>

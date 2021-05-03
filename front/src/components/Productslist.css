@@ -1,0 +1,11 @@
+#products {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+.slick-slide {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
