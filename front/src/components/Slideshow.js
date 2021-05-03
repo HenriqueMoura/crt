@@ -1,33 +1,86 @@
-import React from 'react';
-import { Slide } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css'
+import React, { useState } from 'react';
+import './Slideshow.css';
+// EXEMPLE RESPONSE -  REQUEST
 
-const slideImages = [
-    'images/slide_2.jpg',
-    'images/slide_3.jpg',
-    'images/slide_4.jpg'
+const dataSlide = [
+    {
+        "html": "Testo um",
+        "dataImg": "/images/banner-1.jpg"
+
+    },
+    {
+        "html": "Testo dois",
+        "dataImg": "/images/banner-1.jpg"
+
+
+    },
+    {
+        "html": "Testo tres",
+        "dataImg": "/images/banner-1.jpg"
+    }
 ];
+// EXEMPLE
+const delay = 5000;
 
-const Slideshow = () => {
+function Slideshow() {
+    const [index, setIndex] = React.useState(0);
+    const timeoutRef = React.useRef(null);
+
+    function resetTimeout() {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+        }
+    }
+
+    React.useEffect(() => {
+        resetTimeout();
+        timeoutRef.current = setTimeout(
+            () =>
+                setIndex((prevIndex) =>
+                    prevIndex === dataSlide.length - 1 ? 0 : prevIndex + 1
+                ),
+            delay
+        );
+
+        return () => {
+            resetTimeout();
+        };
+    }, [index]);
+
     return (
-        <div className="slide-container">
-            <Slide>
-                <div className="each-slide">
-                    <div style={{ 'backgroundImage': `url(${slideImages[0]})` }}>
-                        <span>Slide 1</span>
+        <div className="slideshow">
+            <div
+                className="slideshowSlider"
+                style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+            >
+
+                {dataSlide.map((e, index) => (
+                    <div
+                        className="slide"
+                        key={index}
+                        style={{ backgroundImage: `url(${e.dataImg})` }}
+                    >
+                        {e.html}
                     </div>
-                </div>
-                <div className="each-slide">
-                    <div style={{ 'backgroundImage': `url(${slideImages[1]})` }}>
-                        <span>Slide 2</span>
-                    </div>
-                </div>
-                <div className="each-slide">
-                    <div style={{ 'backgroundImage': `url(${slideImages[2]})` }}>
-                        <span>Slide 3</span>
-                    </div>
-                </div>
-            </Slide>
+
+                ))}
+                {console.log(dataSlide)}
+
+            </div>
+
+            <div className="slideshowDots">
+                {dataSlide.map((_, idx) => (
+                    <div
+                        key={idx}
+                        className={`slideshowDot${index === idx ? " active" : ""}`}
+                        onClick={() => {
+                            setIndex(idx);
+                        }}
+                    ></div>
+                ))}
+            </div>
         </div>
-    )
+    );
 }
+
+export default Slideshow

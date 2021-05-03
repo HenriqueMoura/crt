@@ -1,5 +1,6 @@
 import './App.css';
 import Navbar from './components/Navbar';
+import SlideShow from './components/Slideshow';
 import React from 'react'
 import {
   BrowserRouter as Router,
@@ -12,7 +13,10 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route path='/' exact />
+          <Router path='/' exact >
+            <SlideShow />
+
+          </Router>
         </Switch>
       </Router>
     </>
