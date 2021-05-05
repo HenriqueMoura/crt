@@ -19,6 +19,10 @@ class ProductsList extends Component {
                 const products = res.data;
                 this.setState({ products });
             })
+            //make it better
+            .catch(error => {
+                return error;
+            });
     }
 
     render() {

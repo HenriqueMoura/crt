@@ -1,7 +1,8 @@
 import React from 'react';
 import './Slideshow.css';
-// EXEMPLE RESPONSE -  REQUEST
 
+//make it better
+// EXEMPLE STRUTUR
 const dataSlide = [
     {
         "title": "Olá, o que você está buscando?",

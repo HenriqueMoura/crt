@@ -1,7 +1,7 @@
 import './App.css';
-import Navbar from './components/Navbar';
-import SlideShow from './components/Slideshow';
-import ProductsList from './components/Productslist';
+import Navbar from './components/headers/Navbar';
+import SlideShow from './components/sliders/Slideshow';
+import ProductsList from './components/products/Productslist';
 import React from 'react'
 import {
   BrowserRouter as Router,
