@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css'
+import { Link } from 'react-router-dom';
 
 
 function Footer() {
@@ -28,7 +29,7 @@ function Footer() {
                             Seu e-mail foi cadastrado com sucesso!
                             <span>A partir de agora você receberá as novidade e ofertas exclusivas.</span>
                         </h3>
-                        <a href="#" class="btn btn-newsletter-sucess" >Cadastrar novo e-mail</a>
+                        <Link class="btn btn-newsletter-sucess" >Cadastrar novo e-mail</Link>
                     </div>
                 </div>
             </section>
@@ -42,23 +43,23 @@ function Footer() {
                     </div>
 
                     <div className="footer-sac">
-                        <a className="btn btn-footer" href="#">
+                        <Link className="btn btn-footer" href="#">
                             <i class="fas fa-envelope"></i>
                             Entre em contato
-                        </a>
-                        <a className="btn btn-footer" href="#">
+                        </Link>
+                        <Link className="btn btn-footer" href="#">
                             <i class="fas fa-headset"></i>
                             Fale com o nosso <br /> consultor online
-                        </a>
+                        </Link>
                     </div>
                     <div className="footer-support">
                         <div>
                             <span>Created by</span>
-                            <img src='/images/logo-b.svg' />
+                            <img src='/images/logo-b.svg' alt="logo corebiz" />
                         </div>
                         <div>
                             <span>Powered by</span>
-                            <img src='/images/vtex-b.svg' />
+                            <img src='/images/vtex-b.svg' alt="logo vtex" />
                         </div>
                     </div>
                 </div>

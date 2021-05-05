@@ -76,7 +76,7 @@ class ProductsList extends Component {
                         this.state.products.map(product => (
 
                             <div className="product" Slider key={product.productId}>
-                                <img src={product.imageUrl} />
+                                <img src={product.imageUrl} alt={product.productName} />
                                 <div className='basic-info'>
                                     <p> {product.productName}</p>
                                     <div className="stars">

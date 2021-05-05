@@ -16,7 +16,7 @@ function Navbar() {
             <nav className='navbar'>
                 <div className='navbar-container'>
                     <Link to="/" className="navbar-logo">
-                        <img src='/images/logo.svg' />
+                        <img src='/images/logo.svg' alt="logo corebiz" />
                     </Link>
                     <div className='menu-icon' onClick={handleClick}>
                         <i className={click ? 'fas fa-times' : 'fa fa-bars'} />
@@ -35,7 +35,7 @@ function Navbar() {
                     </ul>
                     <Link to='/products' className='nav-links cart' onClick={closeMobileMenu}>
                         <div id="cart-item">
-                            <img src='/images/shopping-cart.svg' />
+                            <img src='/images/shopping-cart.svg' alt="carrinho de compras" />
                             <span className='cart-itens'>1</span>
                         </div>
                     </Link>
