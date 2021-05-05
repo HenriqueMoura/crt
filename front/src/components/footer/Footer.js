@@ -1,12 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Footer.css'
-import { Link } from 'react-router-dom';
 
 
 function Footer() {
 
     return (
         <>
+
+            <section class="newsletter">
+                <div class="newsletter-container">
+                    <div class="newsletter-form active" data-newsletter="box">
+                        <h2>Participe de nossas news com promoções e novidades!</h2>
+                        <form >
+                            <div class="newsletter-box-input">
+                                <input type="text" placeholder="Digite seu nome" />
+                                <span class="alert-input" data-msg-input="name">Preencha com seu nome completo</span>
+                            </div>
+                            <div class="newsletter-box-input">
+                                <input type="email" placeholder="Digite seu email" />
+                                <span class="alert-input" data-msg-input="email">Preencha com um e-mail válido</span>
+                            </div>
+                            <button class="btn btn-form" type="submit" d>Eu quero!</button>
+                        </form>
+                    </div>
+                    <div class="newsletter-box-success">
+                        <h3>
+                            Seu e-mail foi cadastrado com sucesso!
+                            <span>A partir de agora você receberá as novidade e ofertas exclusivas.</span>
+                        </h3>
+                        <a href="#" class="btn btn-newsletter-sucess" >Cadastrar novo e-mail</a>
+                    </div>
+                </div>
+            </section>
             <footer >
                 <div className="footer-container">
                     <div className="footer-location">

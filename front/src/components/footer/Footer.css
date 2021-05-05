@@ -88,3 +88,129 @@ footer .footer-support > div img {
   width: 95px;
   margin-top: 10px;
 }
+
+.newsletter {
+  padding: 30px 0 50px;
+  background: #f2f2f2;
+  text-align: center;
+}
+
+.newsletter-container h2 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.newsletter-container form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.newsletter-container input {
+  width: 280px;
+  max-width: 100%;
+  padding: 16px 17px;
+
+  border: transparent solid 1px;
+  border-radius: 5px;
+}
+
+.newsletter-container .btn-form {
+  padding: 16px 17px;
+  width: 140px;
+}
+
+.newsletter-container .btn-form:hover {
+  background: #000;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.newsletter-container div + div,
+.newsletter-container .btn-form {
+  margin-left: 8px;
+}
+
+.newsletter-box-input {
+  position: relative;
+}
+
+.newsletter-box-input span {
+  position: absolute;
+  bottom: -20px;
+  left: 2px;
+
+  display: none;
+  width: 100%;
+
+  text-align: left;
+  font-size: 12px;
+  color: #d7182a;
+}
+
+.newsletter-form,
+.newsletter-box-success {
+  display: none;
+}
+
+.newsletter-form.active,
+.newsletter-box-success.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.newsletter-box-success {
+  min-height: 101px;
+}
+
+.newsletter-box-success h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.newsletter-box-success h3 span {
+  display: block;
+  font-size: 14px;
+  font-weight: 300;
+  color: #333;
+}
+
+.btn-newsletter-sucess {
+  font-size: 14px;
+  padding: 16px 17px;
+  max-width: 100%;
+  width: 328px;
+}
+
+.btn-newsletter-sucess:hover {
+  background: #333333;
+  border-radius: 5px;
+}
+@media (max-width: 768px) {
+  footer .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+  footer .footer-container .footer-location {
+    text-align: center;
+    justify-content: center;
+  }
+  footer .footer-location h3::after {
+    margin: 0 auto;
+  }
+  .newsletter-container form {
+    flex-direction: column;
+  }
+  .newsletter-container div + div {
+    margin: 10px 0;
+  }
+  .newsletter-container .btn-form {
+    width: 100%;
+  }
+}

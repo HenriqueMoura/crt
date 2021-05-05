@@ -36,12 +36,13 @@
   white-space: normal;
 }
 .slide .slideInfo h3 {
-  font-size: 35px;
+  font-size: 25px;
   font-weight: 600;
 }
 .slide .slideInfo p {
   width: 75%;
-  font-size: 54px;
+  font-size: 40px;
+  max-width: 400px;
   font-weight: bolder;
   white-space: normal;
 }

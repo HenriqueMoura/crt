@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import axios from 'axios'
+import axios from 'axios';
 import Slider from "react-slick";
-import './Productslist.css'
+import './Productslist.css';
 
-import 'slick-carousel/slick/slick-theme.css'
-import 'slick-carousel/slick/slick.css'
+
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
 
 class ProductsList extends Component {
 
@@ -26,22 +27,46 @@ class ProductsList extends Component {
     stars = (value) => {
         let stars = []
         for (let i = 0; i < 5; i++) {
-            console.log(value)
-
-            stars.push(value <= i ? <i class="far fa-star"></i> : <i class="fas fa-star"></i>)
+            stars.push(value <= i ? <i key={i} class="far fa-star"></i> : <i class="fas fa-star"></i>)
         }
         return stars
     }
 
-    render() {
 
+
+    render() {
         var settings = {
             dots: false,
             arrow: true,
             infinite: true,
             speed: 500,
             slidesToShow: 4,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                    }
+                },
+                {
+                    breakpoint: 700,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        initialSlide: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
         };
 
         return (
