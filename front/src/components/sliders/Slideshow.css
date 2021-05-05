@@ -69,3 +69,15 @@
 .slideshowDot.active {
   background-color: #e7495c;
 }
+
+@media (max-width: 769px) {
+  .slide {
+    height: 400px;
+  }
+  .slide .slideInfo h3 {
+    font-size: 11px;
+  }
+  .slide .slideInfo p {
+    font-size: 15px;
+  }
+}

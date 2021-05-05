@@ -8,7 +8,6 @@ import 'slick-carousel/slick/slick.css'
 
 class ProductsList extends Component {
 
-
     state = {
         products: []
     }
@@ -24,14 +23,25 @@ class ProductsList extends Component {
                 return error;
             });
     }
+    stars = (value) => {
+        let stars = []
+        for (let i = 0; i < 5; i++) {
+            console.log(value)
+
+            stars.push(value <= i ? <i class="far fa-star"></i> : <i class="fas fa-star"></i>)
+        }
+        return stars
+    }
 
     render() {
+
         var settings = {
-            dots: true,
+            dots: false,
+            arrow: true,
             infinite: true,
             speed: 500,
-            slidesToShow: 3,
-            slidesToScroll: 3
+            slidesToShow: 4,
+            slidesToScroll: 1
         };
 
         return (
@@ -39,16 +49,34 @@ class ProductsList extends Component {
                 <Slider  {...settings}>
                     {
                         this.state.products.map(product => (
-                            <div Slider key={product.productId}>
+
+                            <div className="product" Slider key={product.productId}>
                                 <img src={product.imageUrl} />
-
-                                <p>{product.productName}</p>
-
+                                <div className='basic-info'>
+                                    <p> {product.productName}</p>
+                                    <div className="stars">
+                                        {this.stars(product.stars)}
+                                    </div>
+                                </div>
+                                <div className="price" >
+                                    <del>{
+                                        product.listPrice ? ` De R$ ${Math.floor(product.listPrice / 100).toFixed(2)}` : ''
+                                    }
+                                    </del>
+                                    <strong>Por: R$ {Math.floor(product.price / 100).toFixed(2)}</strong>
+                                    <span>
+                                        {
+                                            product.listPrice ? ` ou em ${product.installments[0].quantity}x de
+                                            R$ ${parseFloat(product.installments[0].value / 100).toFixed(2)}` : ''
+                                        }
+                                    </span>
+                                    <button> Comprar </button>
+                                </div>
                             </div>
                         ))
                     }
                 </Slider >
-            </div>
+            </div >
         );
     }
 }
